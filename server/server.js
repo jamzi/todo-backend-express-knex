@@ -16,6 +16,7 @@ app.post("/todos/users/:id/assign", routes.assignUserToTodo);
 app.post("/todos/users/:id/unassign", routes.unassignUserFromTodo);
 
 app.get("/users", routes.getAllUsers);
+app.get("/users/:id/todos", routes.getAllTodosForUser);
 app.get("/users/:id", routes.getUser);
 
 app.post("/users", routes.postUser);

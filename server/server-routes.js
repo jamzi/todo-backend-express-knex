@@ -96,6 +96,11 @@ async function unassignUserFromTodo(req, res) {
   return res.send(createToDo(req, unassigned));
 }
 
+async function getAllTodosForUser(req, res) {
+  const allEntries = await todos.getAllTodosForUser(req.params.id);
+  return res.send(allEntries.map(_.curry(createToDo)(req)));
+}
+
 function addErrorReporting(func, message) {
   return async function (req, res) {
     try {
@@ -141,6 +146,10 @@ const toExport = {
   unassignUserFromTodo: {
     method: unassignUserFromTodo,
     errorMessage: "Could not unassign user from todo",
+  },
+  getAllTodosForUser: {
+    method: getAllTodosForUser,
+    errorMessage: "Could not fetch all todos for user",
   },
 };
 

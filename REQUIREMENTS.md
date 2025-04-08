@@ -22,3 +22,9 @@ Apis
 
 - /users (GET - all users, specific user, POST - add user, PATCH - update user)
 - /users/:id/todos (GET - only the user's todos)
+
+---
+
+Tests
+Suggestions
+Push the code (send link to the repo)
